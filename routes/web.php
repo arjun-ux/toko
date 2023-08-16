@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\LoginController;
 use App\Models\Barang;
 
 /*
@@ -16,10 +17,20 @@ use App\Models\Barang;
 */
 
 
-Route::get('/login', function () {
-    return view('dashboard.login');
+//route authenticate
+Route::controller(LoginController::class)->group(function() {
+    Route::get('/register', 'register')->name('register');
+    Route::post('/store', 'store')->name('store');
+    Route::get('/login', 'login')->name('login');
+    Route::post('/authenticate', 'authenticate')->name('authenticate');
+    Route::get('/dashboard', 'dashboard')->name('dashboard');
+    Route::get('/logout', 'logout')->name('logout');
 });
 
-//route resource
-Route::resource('/barang', BarangController::class);
+
+//route resource barang
+Route::resource('/barang', BarangController::class)->middleware('auth');
 Route::get('/',[BarangController::class, 'cari'])->name('cari');
+
+
+//route user
