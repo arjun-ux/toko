@@ -20,7 +20,7 @@ class BarangController extends Controller
         if($request->has('cari')){
             $barangs = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(5);
         }else{
-            $barangs = Barang::paginate(5);
+            $barangs = Barang::latest()->paginate(5);
         }
         return view('dashboard.barang', compact('barangs'))->with('i', ($request->input('page', 1) - 1));
     }

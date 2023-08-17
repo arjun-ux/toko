@@ -13,7 +13,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        //Menampilkan users
+	$users = User::all();
     }
 
     /**

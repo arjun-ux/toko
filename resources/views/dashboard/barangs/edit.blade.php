@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.main')
 
 @section('konten')
-    <h3 class="card-title">Tambah Data Barang</h3>
+    <h3 class="card-title">Edit Data Barang</h3>
     <form action="{{ route('barang.update', $barang->id) }}" method='POST' enctype="multipart/form-data">
     @csrf
     @method('PUT')
