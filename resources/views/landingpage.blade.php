@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-3 text-center mb-3 mt-3">
                 <img class='img-fluid' src="img/pondo.png" alt="logo" width='120'>
