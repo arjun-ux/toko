@@ -22,7 +22,7 @@
                     <img src="{{ asset('storage/toko/'.$barang->gambar) }}" class="img-thumbnail card-img-top" alt="foto makanan" style="height: auto; width: 100%;">
                     <div class="card-body text-center">
                         <div class="card-title">
-                            <h5>{{ $barang->nama_barang }}</h5>
+                            <h6>{{ $barang->nama_barang }}</h6>
                         </div>
                         <h5 class="card-text">Rp. {{ $barang->harga }}</h5>
                     </div>
