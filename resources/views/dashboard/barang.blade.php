@@ -12,7 +12,7 @@
             <div class="col-md-6 mb-2">
                 <a class="btn btn-primary" href="/barang/create">+ Add</a>
             </div>
-            
+
             <div class="col-md-6 mb-3">
                 <form class="form d-flex" method="GET" action="/barang" role="search">
                     <input class="form-control form-control-sm" type="search" placeholder="Search..." name='cari'>
@@ -20,6 +20,7 @@
                 </form>
             </div>
         </div>
+
         <div class="row">
             <div class="col-md-12 text-center">
                 <div class="table-responsive">
@@ -37,7 +38,7 @@
                         <tbody>
                             @foreach($barangs as $barang)
                             <tr>
-                                <td>{{ ++$i }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>
                                     <img src="{{ asset('storage/toko/'.$barang->gambar) }}" class="rounded" style="width: 150px">
                                 </td>
@@ -54,8 +55,11 @@
                         </tbody>
                     </table>
                 </div>
-            
             </div>
+        </div>
+
+        <div class="mt-2">
+            {{ $barangs->links() }}
         </div>
     </div>
 

@@ -18,9 +18,9 @@ class BarangController extends Controller
     public function index(Request $request)
     {
         if($request->has('cari')){
-            $barangs = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(5);
+            $barangs = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(2);
         }else{
-            $barangs = Barang::latest()->paginate(5);
+            $barangs = Barang::latest()->paginate(2);
         }
         return view('dashboard.barang', compact('barangs'))->with('i', ($request->input('page', 1) - 1));
     }
@@ -161,9 +161,9 @@ class BarangController extends Controller
     public function cari(Request $request)
     {
         if($request->has('cari')){
-            $data = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(18);
+            $data = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(2);
         }else{
-            $data = Barang::latest()->paginate(18);
+            $data = Barang::latest()->paginate(2);
         }
         return view('landingpage', compact('data'));
     }

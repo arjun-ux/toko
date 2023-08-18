@@ -15,6 +15,7 @@
             </form>
             </div>
         </div>
+
         <div class="row justify-content-center">
         @foreach($data as $barang)
             <div class="col-md-2 mt-3">
@@ -30,6 +31,10 @@
             </div>
         @endforeach
     </div>
+    <div class="mt-2">
+        {{ $data->links() }}
+    </div>
+
 
 
 @endsection
