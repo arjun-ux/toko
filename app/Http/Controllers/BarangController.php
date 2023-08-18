@@ -156,14 +156,14 @@ class BarangController extends Controller
     {
         //
     }
-    
+
     //search data
     public function cari(Request $request)
     {
         if($request->has('cari')){
-            $data = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(12);
+            $data = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(18);
         }else{
-            $data = Barang::paginate(12);
+            $data = Barang::latest()->paginate(18);
         }
         return view('landingpage', compact('data'));
     }

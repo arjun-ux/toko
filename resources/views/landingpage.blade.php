@@ -15,21 +15,21 @@
             </form>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
         @foreach($data as $barang)
-            <div class="col-md-3 mt-3">
+            <div class="col-md-2 mt-3">
                 <div class="card">
-                    <img src="{{ asset('storage/toko/'.$barang->gambar) }}" class="img-thumbnail card-img-top" alt="foto makanan" style="height: 180px">
+                    <img src="{{ asset('storage/toko/'.$barang->gambar) }}" class="img-thumbnail card-img-top" alt="foto makanan" style="height: auto; width: 100%;">
                     <div class="card-body text-center">
                         <div class="card-title">
                             <h5>{{ $barang->nama_barang }}</h5>
                         </div>
-                        <h6 class="card-text">Rp. {{ $barang->harga }}</h6>
+                        <h5 class="card-text">Rp. {{ $barang->harga }}</h5>
                     </div>
                 </div>
             </div>
         @endforeach
     </div>
 
-    
+
 @endsection

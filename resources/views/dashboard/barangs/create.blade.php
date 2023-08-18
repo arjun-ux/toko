@@ -6,7 +6,7 @@
     @csrf
         <div class="mb-3">
             <label class="form-label">Barcode</label>
-            <input type="text" name="barcode" class="form-control" placeholder="Barcode">
+            <input type="number" name="barcode" class="form-control" placeholder="Barcode">
         </div>
         <div class="mb-3">
             <label class="form-label">Nama Barang</label>
