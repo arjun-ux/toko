@@ -145,7 +145,7 @@ class BarangController extends Controller
             ]);
         }
         //redirect to index
-        return redirect()->route('barang.index');
+        return redirect()->back()->with('pesan', 'Data Berhasil Di Ubah');
     }
 
     /**

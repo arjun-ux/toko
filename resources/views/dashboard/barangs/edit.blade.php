@@ -2,6 +2,11 @@
 
 @section('konten')
     <h3 class="card-title">Edit Data Barang</h3>
+    @if(session()->has('pesan'))
+        <div class="alert alert-success">
+            {{session()->get('pesan') }}
+        </div>			
+    @endif
     <form action="{{ route('barang.update', $barang->id) }}" method='POST' enctype="multipart/form-data">
     @csrf
     @method('PUT')
