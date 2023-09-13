@@ -10,7 +10,7 @@
 
         <div class="row">
             <div class="col-md-6 mb-2">
-                <a class="btn btn-primary" href="/barang/create">+ Add</a>
+                <a class="btn btn-primary btn-sm" href="/barang/create"><i data-feather="plus-circle" width="15"></i></a>
             </div>
 
             <div class="col-md-6 mb-3">
@@ -28,7 +28,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Gambar</th>
+                                <!-- <th>Gambar</th> -->
                                 <th>Barcode</th>
                                 <th>Nama</th>
                                 <th>Harga</th>
@@ -39,16 +39,16 @@
                             @foreach($barangs as $barang)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>
+                                <!-- <td>
                                     <img src="{{ asset('storage/toko/'.$barang->gambar) }}" class="rounded" style="width: 150px">
-                                </td>
+                                </td> -->
                                 <td>{{ $barang->barcode }}</td>
                                 <td>{{ $barang->nama_barang }}</td>
                                 <td>Rp. {{ $barang->harga }}</td>
                                 <td>
-                                    <a class="btn btn-sm btn-info mb-1" href="{{ route('barang.show', $barang->id) }}"><i data-feather="info"></i></a>
-                                    <a class='btn btn-sm btn-warning mb-1' href="{{ route('barang.edit', $barang->id) }}"><i data-feather="settings"></i></a>
-                                    <button class='btn btn-sm btn-danger mb-1' type="submit"><i data-feather="trash-2"></i></button>
+                                    <a class="btn btn-sm btn-info mb-1" href="{{ route('barang.show', $barang->id) }}"><i data-feather="info" width="15"></i></a>
+                                    <a class='btn btn-sm btn-warning mb-1' href="{{ route('barang.edit', $barang->id) }}"><i data-feather="settings" width="15"></i></a>
+                                    <button class='btn btn-sm btn-danger mb-1' type="submit"><i data-feather="trash-2" width="15"></i></button>
                                 </td>
                             </tr>
                             @endforeach
