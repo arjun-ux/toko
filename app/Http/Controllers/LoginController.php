@@ -65,7 +65,7 @@ class LoginController extends Controller
         {
             $request->session()->regenerate();
             return redirect()->route('dashboard')
-                ->withSuccess('You have successfully logged in!');
+                ->withSuccess('Login Berhasil');
         }
 
         return back()->withErrors([
@@ -93,6 +93,6 @@ class LoginController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->route('login')
-            ->withSuccess('You have logged out successfully!');;
+            ->withSuccess('Logout Berhasil');;
     }
 }

@@ -2,6 +2,11 @@
 
 @section('konten')
     <h3 class="card-title">Tambah Data Barang</h3>
+    @if(session()->has('pesan'))
+        <div class="alert alert-success">
+            {{session()->get('pesan') }}
+        </div>			
+    @endif
     <form action="{{ route('barang.store') }}" method='POST' enctype="multipart/form-data">
     @csrf
         <div class="mb-3">

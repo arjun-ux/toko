@@ -64,7 +64,9 @@ class BarangController extends Controller
             ]);
 
         //redirect to index barang
-        return view('dashboard.barangs.create');
+        //return view('dashboard.barangs.create')
+        //->withSuccess('Barang Berhasil Ditambahkan');
+        return redirect()->back()->with('pesan', 'Data Berhasil Disimpan');
 
     }
 
