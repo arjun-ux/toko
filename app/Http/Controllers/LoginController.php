@@ -67,10 +67,7 @@ class LoginController extends Controller
             return redirect()->route('dashboard')
                 ->withSuccess('Login Berhasil');
         }
-
-        return back()->withErrors([
-            'email' => 'Your provided credentials do not match in our records.',
-        ])->onlyInput('email');
+        return back()->with('pesan','Email Atau Password Anda Salah!!!');
 
     }
 
@@ -80,11 +77,7 @@ class LoginController extends Controller
         {
             return view('dashboard.dashboard');
         }
-
-        return redirect()->route('login')
-            ->withErrors([
-            'email' => 'Please login to access the dashboard.',
-        ])->onlyInput('email');
+        return redirect()->back()->with('eror', 'Username Atau Password Anda Salah!!!');
     }
 
     public function logout(Request $request)

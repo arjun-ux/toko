@@ -3,7 +3,8 @@
 @section('konten')
     @if ($pesan = Session::get('success'))
         <div class="alert alert-success">
-            {{ $pesan }}
+            {{ $pesan }} <br>
+            Selamat Datang <strong>{{ Auth::user()->name }}</strong> 
         </div>
     @endif
 
