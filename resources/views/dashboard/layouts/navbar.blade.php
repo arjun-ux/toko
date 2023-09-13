@@ -32,6 +32,11 @@
                                 Logout
                                 </button>
                             </li>
+                            <li>
+                                <button type="button" class="dropdown-item" href="#">
+                                My Profile
+                                </button>
+                            </li>
                         </ul>
                     </li>
 
