@@ -28,15 +28,16 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
+                                <a type="button" class="dropdown-item" href="/myProfile">
+                                My Profile
+                                </a>
+                            </li>
+                            <li>
                                 <button type="button" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" href="{{ route('logout') }}">
                                 Logout
                                 </button>
                             </li>
-                            <li>
-                                <button type="button" class="dropdown-item" href="#">
-                                My Profile
-                                </button>
-                            </li>
+
                         </ul>
                     </li>
 

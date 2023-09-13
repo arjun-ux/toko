@@ -34,3 +34,6 @@ Route::get('/',[BarangController::class, 'cari'])->name('cari');
 
 
 //route user
+Route::get('/myProfile', function (){
+    return view('dashboard.admin.userProfile');
+})->middleware('auth');
