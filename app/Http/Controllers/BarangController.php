@@ -22,7 +22,7 @@ class BarangController extends Controller
         }else{
             $barangs = Barang::latest()->paginate(10);
         }
-        return view('dashboard.barang', compact('barangs'))->with('i', ($request->input('page', 1) - 1));
+        return view('dashboard.barangs.barang', compact('barangs'))->with('i', ($request->input('page', 1) - 1));
     }
 
     /**

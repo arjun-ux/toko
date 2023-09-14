@@ -27,7 +27,7 @@ class LoginController extends Controller
      */
     public function login()
     {
-        return view('dashboard.login');
+        return view('dashboard.register.login');
     }
     /**
      * Store a newly created resource in storage.

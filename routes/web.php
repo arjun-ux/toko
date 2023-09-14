@@ -17,6 +17,8 @@ use App\Models\Barang;
 */
 
 
+
+
 //route authenticate
 Route::controller(LoginController::class)->group(function() {
     //Route::get('/register', 'register')->name('register');
