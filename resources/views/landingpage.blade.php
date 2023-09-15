@@ -18,16 +18,19 @@
 
         <div class="row justify-content-center">
         @foreach($data as $barang)
-            <div class="col-md-2 mt-3">
-                <div class="card">
-                    <img src="{{ asset('storage/toko/'.$barang->gambar) }}" class="img-thumbnail card-img-top" alt="foto makanan" style="height: auto; width: 100%;">
-                    <div class="card-body text-center">
-                        <div class="card-title">
-                            <h6>{{ $barang->nama_barang }}</h6>
+            <div class="col-md-3 mt-3">
+                <div class="flex" >
+                    <div class="card">
+                        <img src="{{ asset('storage/toko/'.$barang->gambar) }}" class="flex img-thumbnail card-img-top" alt="{{ $barang->nama_barang }}" style="width: 250px; height: 250px;">
+                        <div class="card-body text-center">
+                            <div class="card-title">
+                                <h6><b>{{ $barang->nama_barang }}</b></h6>
+                            </div>
+                            <h5 class="card-text">Rp. {{ $barang->harga }}</h5>
                         </div>
-                        <h5 class="card-text">Rp. {{ $barang->harga }}</h5>
                     </div>
                 </div>
+
             </div>
         @endforeach
     </div>

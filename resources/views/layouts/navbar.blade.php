@@ -1,13 +1,14 @@
 
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-light navbar-expand-lg bg-light">
   <div class="container-fluid p-0">
-      <div>
-        <a class="navbar-brand fw-bold" href="/">Teddy's Mart</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      </div>
+
+    <a class="navbar-brand fw-bold" href="/">Teddy's Mart</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
           <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+
             <ul class="navbar-nav">
               @guest
                 <a class="btn btn-primary" href="/login">Login</a>
@@ -29,7 +30,7 @@
                   </li>
 
                   <div class="dropdown-divider"></div>
-                  
+
                   <li>
                     <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">
                       <i class="fas fa-sign-out-alt fa-fw mr-2 text-gray-400"></i>Logout
