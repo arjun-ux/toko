@@ -32,10 +32,16 @@ Route::controller(LoginController::class)->group(function() {
 
 //route resource barang
 Route::resource('/barang', BarangController::class)->middleware('auth');
-Route::get('/',[BarangController::class, 'cari'])->name('cari');
+// Route::get('/',[BarangController::class,'cari'])->name('cari');
 
 
 //route user
 Route::get('/myProfile', function (){
     return view('dashboard.admin.userProfile');
 })->middleware('auth');
+
+Route::controller(BarangController::class)->group(function(){
+    Route::get('/', 'test');
+    Route::get('/ajax','ajax');
+    Route::get('/read','read');
+});

@@ -160,13 +160,37 @@ class BarangController extends Controller
     }
 
     //search data
-    public function cari(Request $request)
-    {
-        if($request->has('cari')){
-            $data = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(18);
-        }else{
-            $data = Barang::latest()->paginate(18);
-        }
+    // public function cari(Request $request)
+    // {
+    //     if($request->has('cari')){
+    //         $data = Barang::where('nama_barang','LIKE','%' .$request->cari. '%')->paginate(18);
+    //     }else{
+    //         $data = Barang::latest()->paginate(18);
+    //     }
+    //     return view('landingpage', compact('data'));
+    // }
+
+    // Search data dilandingpage menggunakan ajax
+    public function test(){
+        $data = Barang::latest()->paginate(4);
         return view('landingpage', compact('data'));
+    }
+
+    public function ajax(Request $request)
+    {
+        $name = $request->name;
+        $results = Barang::where('nama_barang','like','%'.$name.'%')->get();
+        $c = count($results);
+        if($c == 0 ){
+            return "<p><center><b>Maaf Data Tidak Ditemukan...</b></center></p>";
+        }else{
+            return view('ajaxpage')->with([
+                'data' => $results,
+            ]);
+        }
+    }
+    // Fungsi ketika tidak ada inputan
+    public function read(){
+        return "<p><center><strong>Silahkan masukan kata kunci pencarian...</strong></center></p>";
     }
 }

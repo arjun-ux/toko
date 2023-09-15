@@ -10,15 +10,20 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-4">
-            <form class="form d-flex" method="GET" action="{{ route('cari') }}" role="search">
-                <input class="form-control form-control-sm" type="search" placeholder="Search..." name='cari' style="height: 20px;">
-            </form>
+            {{-- <form class="form d-flex" method="GET" action="{{ route('cari') }}" role="search">
+            </form> --}}
+
+            {{-- input ke ajax dengan id=input --}}
+            <input class="form-control form-control-sm" type="search" id="input" name='cari' style="height: 20px;" placeholder="Search...">
             </div>
         </div>
 
-        <div class="row justify-content-center">
+
+        {{-- hasil dari pencarian menggunakan ajax dengan id=read --}}
+        <div class="row justify-content-center" id="read">
         @foreach($data as $barang)
             <div class="col-md-3 mt-3">
+
                 <div class="d-flex" >
                     <div class="card" style="width: 500px; ">
                         <img src="{{ asset('storage/toko/'.$barang->gambar) }}" class="flex img-thumbnail card-img-top" alt="{{ $barang->nama_barang }}" width="900px" height="400px">
@@ -30,14 +35,11 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         @endforeach
     </div>
-    <div class="mt-2">
+
+    {{-- <div class="mt-2">
         {{ $data->links() }}
-    </div>
-
-
-
+    </div> --}}
 @endsection
